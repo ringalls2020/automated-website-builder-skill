@@ -17,7 +17,7 @@ An installable Codex skill for finding local-business leads and turning them int
 ## Install
 
 ```bash
-npx -y github:Kappaemme-git/tocayo-outreach-pipeline-skill
+npx -y github:ringalls2020/tocayo-outreach-pipeline-skill
 ```
 
 After publishing to npm, this shorter command will also work:
