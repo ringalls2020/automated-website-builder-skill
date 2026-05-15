@@ -1,4 +1,4 @@
-# Tocayo Outreach Pipeline Skill
+# Automated Website Builder Skill
 
 An installable Codex skill for finding local-business leads and turning them into cold outreach assets: Tocayo demo sites, Tocayo transfer links, 30-second walkthrough MP4s, and personalized email/DM copy.
 
@@ -18,29 +18,35 @@ An installable Codex skill for finding local-business leads and turning them int
 ## Install
 
 ```bash
-npx -y github:ringalls2020/tocayo-outreach-pipeline-skill
+npx -y github:ringalls2020/automated-website-builder-skill
 ```
 
 After publishing to npm, this shorter command will also work:
 
 ```bash
-npx -y tocayo-outreach-pipeline-skill
+npx -y automated-website-builder-skill
 ```
 
-The installer copies `tocayo-outreach-pipeline` into `~/.codex/skills`. No companion skill is required.
+The installer copies `automated-website-builder` into `~/.codex/skills`. No companion skill is required.
 
 ## Use
 
 In Codex:
 
 ```text
-Use $tocayo-outreach-pipeline to find roofers in Austin without good websites, develop the outreach tone with me, build Tocayo demo sites for the top 5, generate transfer links and MP4 walkthroughs, and draft cold email copy.
+/automated-website-builder
+```
+
+or:
+
+```text
+Use $automated-website-builder to find roofers in Austin without good websites, develop the outreach tone with me, build Tocayo demo sites for the top 5, generate transfer links and MP4 walkthroughs, and draft cold email copy.
 ```
 
 With an existing lead sheet:
 
 ```text
-Use $tocayo-outreach-pipeline with leads.csv. Interview me for the offer and write outreach for the top 5 prospects.
+Use $automated-website-builder with leads.csv. Interview me for the offer and write outreach for the top 5 prospects.
 ```
 
 ## Requirements
@@ -53,7 +59,7 @@ Use $tocayo-outreach-pipeline with leads.csv. Interview me for the offer and wri
 ## Repository layout
 
 ```text
-tocayo-outreach-pipeline/
+automated-website-builder/
   SKILL.md
   agents/openai.yaml
   references/

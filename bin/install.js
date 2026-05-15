@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import { homedir } from "node:os";
 
 const packageRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const skillName = "tocayo-outreach-pipeline";
+const skillName = "automated-website-builder";
 const sourceSkillDir = join(packageRoot, skillName);
 const codexHome = process.env.CODEX_HOME || join(homedir(), ".codex");
 const skillsDir = join(codexHome, "skills");
@@ -37,4 +37,4 @@ function copyDirectory(source, target) {
 mkdirSync(skillsDir, { recursive: true });
 copyDirectory(sourceSkillDir, targetSkillDir);
 console.log(`Installed ${skillName} to ${targetSkillDir}`);
-console.log("Done. Invoke with $tocayo-outreach-pipeline in Codex.");
+console.log("Done. Invoke with $automated-website-builder in Codex.");

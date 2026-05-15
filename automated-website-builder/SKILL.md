@@ -1,9 +1,9 @@
 ---
-name: tocayo-outreach-pipeline
+name: automated-website-builder
 description: End-to-end Tocayo cold outreach workflow for local-business prospecting. Use when the user wants to find and qualify local business leads, check website/social presence, score prospects, develop outreach tone and campaign messaging, build live Tocayo demo sites, generate Tocayo transfer links, generate 30-second MP4 walkthrough videos, and output cold email/DM copy with site URLs, transfer links, and video paths. Also use when the user provides an existing lead sheet, CSV, spreadsheet, JSON, or Markdown table and wants it turned into Tocayo outreach assets.
 ---
 
-# Tocayo Outreach Pipeline
+# Automated Website Builder
 
 Find local-business prospects and convert them into outreach-ready assets: qualified lead sheets, a concise campaign brief from the user, Tocayo demo sites, Tocayo transfer links, 30-second walkthrough MP4s, and cold email/DM copy.
 

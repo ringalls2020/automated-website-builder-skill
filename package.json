@@ -1,25 +1,25 @@
 {
-  "name": "tocayo-outreach-pipeline-skill",
+  "name": "automated-website-builder-skill",
   "version": "0.1.0",
   "description": "Codex skill for finding local leads and turning them into Tocayo demo sites, transfer links, walkthrough videos, and cold outreach messages.",
-  "homepage": "https://github.com/ringalls2020/tocayo-outreach-pipeline-skill#readme",
+  "homepage": "https://github.com/ringalls2020/automated-website-builder-skill#readme",
   "license": "MIT",
   "type": "module",
   "bin": {
-    "tocayo-outreach-pipeline-skill": "./bin/install.js"
+    "automated-website-builder-skill": "./bin/install.js"
   },
   "files": [
     "bin",
-    "tocayo-outreach-pipeline/SKILL.md",
-    "tocayo-outreach-pipeline/agents",
-    "tocayo-outreach-pipeline/references",
-    "tocayo-outreach-pipeline/scripts/*.mjs",
-    "tocayo-outreach-pipeline/scripts/*.py",
+    "automated-website-builder/SKILL.md",
+    "automated-website-builder/agents",
+    "automated-website-builder/references",
+    "automated-website-builder/scripts/*.mjs",
+    "automated-website-builder/scripts/*.py",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "check": "node --check bin/install.js && node --check tocayo-outreach-pipeline/scripts/render-demo-video.mjs && python3 -m py_compile tocayo-outreach-pipeline/scripts/normalize-leads.py"
+    "check": "node --check bin/install.js && node --check automated-website-builder/scripts/render-demo-video.mjs && python3 -m py_compile automated-website-builder/scripts/normalize-leads.py"
   },
   "keywords": [
     "codex",
@@ -31,10 +31,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ringalls2020/tocayo-outreach-pipeline-skill.git"
+    "url": "git+https://github.com/ringalls2020/automated-website-builder-skill.git"
   },
   "bugs": {
-    "url": "https://github.com/ringalls2020/tocayo-outreach-pipeline-skill/issues"
+    "url": "https://github.com/ringalls2020/automated-website-builder-skill/issues"
   },
   "publishConfig": {
     "access": "public"
