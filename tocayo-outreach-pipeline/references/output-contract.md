@@ -6,13 +6,14 @@ Use this structure for the final user-facing delivery.
 
 Include one row per attempted lead:
 
-| Lead | Status | Live Tocayo URL | MP4 | Contact channel | Notes |
-| --- | --- | --- | --- | --- | --- |
+| Lead | Status | Live Tocayo URL | Transfer link | MP4 | Contact channel | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
 
 Statuses:
 
-- `ready`: live site, MP4, and outreach copy are complete.
-- `blocked`: missing Tocayo access, lead data, contact route, or render dependency.
+- `ready`: live site, transfer link, MP4, and outreach copy are complete.
+- `partial`: at least one asset exists, but transfer link, MP4, or copy is missing.
+- `blocked`: missing Tocayo access, lead data, contact route, transfer-link access, or render dependency.
 - `skipped`: intentionally not processed, with reason.
 
 ## Per-Lead Copy
@@ -25,6 +26,7 @@ For each ready lead, provide:
 - Short alternate message.
 - Follow-up.
 - Live Tocayo URL.
+- Tocayo transfer link.
 - MP4 absolute path.
 
 ## File Output
@@ -36,6 +38,7 @@ outreach-output/<campaign-slug>/
   normalized-leads.json
   selected-leads.md
   messages.md
+  transfer-links.md
   videos/
 ```
 

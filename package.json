@@ -1,7 +1,7 @@
 {
   "name": "tocayo-outreach-pipeline-skill",
   "version": "0.1.0",
-  "description": "Codex skill for finding local leads and turning them into Tocayo demo sites, walkthrough videos, and cold outreach messages.",
+  "description": "Codex skill for finding local leads and turning them into Tocayo demo sites, transfer links, walkthrough videos, and cold outreach messages.",
   "homepage": "https://github.com/ringalls2020/tocayo-outreach-pipeline-skill#readme",
   "license": "MIT",
   "type": "module",

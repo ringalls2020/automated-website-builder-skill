@@ -1,11 +1,11 @@
 ---
 name: tocayo-outreach-pipeline
-description: End-to-end Tocayo cold outreach workflow for local-business prospecting. Use when the user wants to find and qualify local business leads, check website/social presence, score prospects, develop outreach tone and campaign messaging, build live Tocayo demo sites, generate 30-second MP4 walkthrough videos, and output cold email/DM copy with site URLs and video paths. Also use when the user provides an existing lead sheet, CSV, spreadsheet, JSON, or Markdown table and wants it turned into Tocayo outreach assets.
+description: End-to-end Tocayo cold outreach workflow for local-business prospecting. Use when the user wants to find and qualify local business leads, check website/social presence, score prospects, develop outreach tone and campaign messaging, build live Tocayo demo sites, generate Tocayo transfer links, generate 30-second MP4 walkthrough videos, and output cold email/DM copy with site URLs, transfer links, and video paths. Also use when the user provides an existing lead sheet, CSV, spreadsheet, JSON, or Markdown table and wants it turned into Tocayo outreach assets.
 ---
 
 # Tocayo Outreach Pipeline
 
-Find local-business prospects and convert them into outreach-ready assets: qualified lead sheets, a concise campaign brief from the user, Tocayo demo sites, 30-second walkthrough MP4s, and cold email/DM copy.
+Find local-business prospects and convert them into outreach-ready assets: qualified lead sheets, a concise campaign brief from the user, Tocayo demo sites, Tocayo transfer links, 30-second walkthrough MP4s, and cold email/DM copy.
 
 ## Required Inputs
 
@@ -59,6 +59,7 @@ If the base location is missing and cannot be inferred, ask one concise clarific
    - Use the available Tocayo interface. Do not assume private local paths or credentials.
    - Create a build brief from normalized lead data and source evidence.
    - Publish the site and record the live URL. Never fabricate a Tocayo URL.
+   - Generate the site's transfer link from `https://tocayo.me/settings/transfer` and record the actual returned link. Never fabricate a transfer link.
    - If Tocayo access is unavailable, pause and state exactly what the user must provide.
 
 7. Generate a 30-second walkthrough MP4 for each live site.
@@ -67,14 +68,15 @@ If the base location is missing and cannot be inferred, ask one concise clarific
    - The video must be a silent single linear scroll of the website at 1920x1080. No narration, captions, cuts, mockups, browser chrome, cursor effects, or music.
 
 8. Draft outreach.
-   - Write messages after the site URL and MP4 path exist, so the copy can reference real assets.
+   - Write messages after the site URL, transfer link, and MP4 path exist, so the copy can reference real assets.
    - Personalize from public evidence in the lead sheet and Tocayo build brief.
    - Avoid claims of affiliation, ownership, guaranteed results, or prior relationship unless supplied by the user.
+   - Include the transfer link in the outbound copy only when the campaign brief says the prospect should claim or take over the site directly; otherwise keep it in the final handoff table.
    - Include a light opt-out line for email campaigns when appropriate.
 
 9. Deliver the output.
    - Follow `references/output-contract.md`.
-   - Include prospecting criteria, selected/skipped leads, each lead's business name, confidence, live Tocayo URL, MP4 path, primary message, follow-up, and any blocked/missing items.
+   - Include prospecting criteria, selected/skipped leads, each lead's business name, confidence, live Tocayo URL, transfer link, MP4 path, primary message, follow-up, and any blocked/missing items.
 
 ## Quality Bar
 
