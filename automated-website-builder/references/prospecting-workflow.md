@@ -15,6 +15,7 @@ Infer reasonable defaults and continue unless the base location is missing.
 
 ## Research Rules
 
+- Read `memory.md` before researching or selecting leads. Exclude remembered businesses unless the user explicitly asks to revisit them.
 - Use browser-assisted research and public sources.
 - Treat maps, directories, search results, social pages, and official websites as discovery/evidence sources.
 - Do not bypass CAPTCHAs, login walls, paywalls, bot protections, robots restrictions, or rate limits.
@@ -47,6 +48,8 @@ Infer reasonable defaults and continue unless the base location is missing.
 
 Do not label a lead `Hot` unless website status has been checked with an exact-name search.
 
+Mark remembered businesses as `Skip` with reason `duplicate in memory.md` unless the user asked to revisit them.
+
 ## Lead Sheet Output
 
 Use this chat table for prospecting results unless the user requests a file:
@@ -61,6 +64,7 @@ Rules:
 - Include source URLs in notes or a compact `source_urls` field when useful.
 - After the table, add `Best first outreach targets` with the top 3 leads and one practical reason each.
 - State search location, radius, categories, and date in the summary.
+- State how many candidates were excluded because they matched `memory.md`.
 
 When creating CSV, use:
 

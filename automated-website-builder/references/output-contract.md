@@ -2,6 +2,8 @@
 
 Use this structure for the final user-facing delivery.
 
+Always include the `memory.md` path used for the run.
+
 ## Summary Table
 
 Include one row per attempted lead:
@@ -15,6 +17,7 @@ Statuses:
 - `partial`: at least one asset exists, but transfer link, MP4, or copy is missing.
 - `blocked`: missing Tocayo access, lead data, contact route, transfer-link access, or render dependency.
 - `skipped`: intentionally not processed, with reason.
+- `duplicate`: skipped because the lead matched an existing `memory.md` entry.
 
 ## Per-Lead Copy
 
@@ -36,6 +39,7 @@ When the user asks for files, create an output directory such as:
 ```text
 outreach-output/<campaign-slug>/
   normalized-leads.json
+  memory.md
   selected-leads.md
   messages.md
   transfer-links.md
