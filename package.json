@@ -1,0 +1,45 @@
+{
+  "name": "tocayo-outreach-pipeline-skill",
+  "version": "0.1.0",
+  "description": "Codex skill for finding local leads and turning them into Tocayo demo sites, walkthrough videos, and cold outreach messages.",
+  "homepage": "https://github.com/Kappaemme-git/tocayo-outreach-pipeline-skill#readme",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "tocayo-outreach-pipeline-skill": "./bin/install.js"
+  },
+  "files": [
+    "bin",
+    "tocayo-outreach-pipeline/SKILL.md",
+    "tocayo-outreach-pipeline/agents",
+    "tocayo-outreach-pipeline/references",
+    "tocayo-outreach-pipeline/scripts/*.mjs",
+    "tocayo-outreach-pipeline/scripts/*.py",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "node --check bin/install.js && node --check tocayo-outreach-pipeline/scripts/render-demo-video.mjs && python3 -m py_compile tocayo-outreach-pipeline/scripts/normalize-leads.py"
+  },
+  "keywords": [
+    "codex",
+    "skill",
+    "tocayo",
+    "outreach",
+    "prospecting",
+    "local-business"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kappaemme-git/tocayo-outreach-pipeline-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kappaemme-git/tocayo-outreach-pipeline-skill/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tocayo Outreach Pipeline"
+  short_description: "Find leads and create Tocayo outreach"
+  default_prompt: "Use $tocayo-outreach-pipeline to find local leads, develop the outreach tone, build Tocayo demo sites, generate 30-second walkthrough videos, and draft cold messages."
