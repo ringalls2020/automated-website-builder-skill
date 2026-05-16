@@ -1,6 +1,6 @@
 ---
 name: automated-website-builder
-description: End-to-end Tocayo cold outreach workflow for local-business prospecting. Use when the user wants to find and qualify local business leads, check website/social presence, score prospects, avoid duplicate businesses using memory.md, develop outreach tone and campaign messaging, build live Tocayo demo sites, generate Tocayo transfer links, generate 30-second MP4 walkthrough videos, and output cold email/DM copy with site URLs, transfer links, and video paths. Also use when the user provides an existing lead sheet, CSV, spreadsheet, JSON, or Markdown table and wants it turned into Tocayo outreach assets.
+description: End-to-end Tocayo cold outreach workflow for local-business prospecting. Use when the user wants to find and qualify local business leads, check website/social presence, score prospects, avoid duplicate businesses using memory.md, develop outreach tone and campaign messaging, build live Tocayo demo sites, generate Tocayo transfer links, generate 30-second MP4 walkthrough videos, and output cold email/DM copy with business names, phone numbers, email addresses, site URLs, transfer links, and video paths. Also use when the user provides an existing lead sheet, CSV, spreadsheet, JSON, or Markdown table and wants it turned into Tocayo outreach assets.
 ---
 
 # Automated Website Builder
@@ -90,7 +90,7 @@ If the base location is missing and cannot be inferred, ask one concise clarific
 
 11. Deliver the output.
    - Follow `references/output-contract.md`.
-   - Include prospecting criteria, memory path, selected/skipped leads, each lead's business name, confidence, live Tocayo URL, transfer link, MP4 path, primary message, follow-up, and any blocked/missing items.
+   - Include prospecting criteria, memory path, selected/skipped leads, each lead's business name, phone number, email address, confidence, live Tocayo URL, transfer link, MP4 path, primary message, follow-up, and any blocked/missing items.
 
 ## Quality Bar
 

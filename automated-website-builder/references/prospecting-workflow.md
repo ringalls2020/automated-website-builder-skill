@@ -54,8 +54,8 @@ Mark remembered businesses as `Skip` with reason `duplicate in memory.md` unless
 
 Use this chat table for prospecting results unless the user requests a file:
 
-| Score | Business | Category | Area | Distance | Website status | Website/Social | Phone | Why it is a prospect | Confidence |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Score | Business | Category | Area | Distance | Website status | Website/Social | Phone | Email | Why it is a prospect | Confidence |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
 Rules:
 

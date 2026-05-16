@@ -206,17 +206,17 @@ def normalize_leads(rows: list[dict[str, Any]], max_leads: int | None) -> list[d
 
 
 def print_markdown(leads: list[dict[str, Any]]) -> None:
-    print("| Rank | Business | Category | Location | Website status | Contact | Score | Reason |")
-    print("| --- | --- | --- | --- | --- | --- | ---: | --- |")
+    print("| Rank | Business | Category | Location | Website status | Phone | Email | Score | Reason |")
+    print("| --- | --- | --- | --- | --- | --- | --- | ---: | --- |")
     for rank, lead in enumerate(leads, start=1):
-        contact = lead.get("email") or lead.get("phone") or ", ".join(lead.get("social_urls", []))
         values = [
             str(rank),
             lead.get("business_name", ""),
             lead.get("category", ""),
             lead.get("location", ""),
             lead.get("website_status", ""),
-            contact,
+            lead.get("phone", "") or "Not found",
+            lead.get("email", "") or "Not found",
             str(lead.get("rank_score", "")),
             lead.get("selection_reason", ""),
         ]

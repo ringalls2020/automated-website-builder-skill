@@ -14,7 +14,7 @@ An installable Codex skill for finding local-business leads and turning them int
 - Builds a Tocayo site for each selected lead using the available Tocayo interface in the user's environment.
 - Generates a Tocayo transfer link from `tocayo.me/settings/transfer` for each generated business website.
 - Generates a silent 1920x1080 MP4 walkthrough of each live Tocayo site.
-- Outputs cold outreach messages, follow-ups, live site URLs, transfer links, and MP4 paths.
+- Outputs business names, phone numbers, email addresses, cold outreach messages, follow-ups, live site URLs, transfer links, and MP4 paths.
 
 ## Install
 
