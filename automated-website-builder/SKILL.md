@@ -14,6 +14,7 @@ Find local-business prospects and convert them into outreach-ready assets: quali
   - Lead sheet: CSV, TSV, JSON, Markdown table, spreadsheet file, or pasted rows.
 - Tocayo access through the user's available app, API, CLI, or workflow.
 - A target outreach asset count. If missing, default to the top 5 viable leads after qualification.
+- Google Maps business profile URLs when available. Tocayo onboarding can use these to prefill business details, so treat them as high-value lead evidence.
 
 If the base location is missing and cannot be inferred, ask one concise clarification before prospecting. Otherwise infer reasonable defaults and proceed.
 
@@ -43,6 +44,7 @@ If the base location is missing and cannot be inferred, ask one concise clarific
 3. Find and qualify leads when needed.
    - Follow `references/prospecting-workflow.md`.
    - Use browser-assisted research from public sources; do not scrape at scale or bypass access controls.
+   - Capture a `google_maps_url` for each viable business when a public Google profile is available.
    - Verify website/social/contact status before labeling a lead as hot.
    - Skip candidates already present in `memory.md` unless the user explicitly asks to revisit them.
    - Produce a compact lead sheet in chat unless the user asks for CSV/spreadsheet output.
@@ -53,8 +55,8 @@ If the base location is missing and cannot be inferred, ask one concise clarific
    - Preserve original source URLs and notes. Do not discard provenance.
 
 5. Select viable prospects.
-   - Prefer leads with weak/no websites, clear public contact channels, strong category fit, and credible evidence.
-   - Exclude leads that match `memory.md` entries by business name plus location, phone, website domain, social URL, Tocayo URL, or transfer link.
+   - Prefer leads with weak/no websites, a Google Maps profile or other credible public evidence, clear public contact channels, and strong category fit.
+   - Exclude leads that match `memory.md` entries by business name plus location, phone, website domain, Google Maps URL, social URL, Tocayo URL, or transfer link.
    - Exclude leads that lack enough information to build a reasonable demo site unless the user explicitly wants them.
    - Keep a short reason for every included and excluded lead.
 
@@ -67,6 +69,9 @@ If the base location is missing and cannot be inferred, ask one concise clarific
 7. Build one Tocayo demo site per selected lead.
    - Use the available Tocayo interface. Do not assume private local paths or credentials.
    - Create a build brief from normalized lead data and source evidence.
+   - Prefer Tocayo's Google profile prefill when `google_maps_url` is available: open `https://tocayo.me/onboarding`, choose the Google profile/business-name path, paste the Maps URL, verify the matched business, and approve the prefilled details before generation.
+   - If using the existing-site rebuild path, the website URL field can accept Google Maps URLs, but the Google profile approval path is preferred when the lead is primarily Maps-sourced.
+   - Do not require or fabricate an email address if Tocayo allows continuing with prefilled phone/address/profile details.
    - Publish the site and record the live URL. Never fabricate a Tocayo URL.
    - Generate the site's transfer link from `https://tocayo.me/settings/transfer` and record the actual returned link. Never fabricate a transfer link.
    - If Tocayo access is unavailable, pause and state exactly what the user must provide.
@@ -90,7 +95,7 @@ If the base location is missing and cannot be inferred, ask one concise clarific
 
 11. Deliver the output.
    - Follow `references/output-contract.md`.
-   - Include prospecting criteria, memory path, selected/skipped leads, each lead's business name, phone number, email address, confidence, live Tocayo URL, transfer link, MP4 path, primary message, follow-up, and any blocked/missing items.
+   - Include prospecting criteria, memory path, selected/skipped leads, each lead's business name, Google Maps URL when available, phone number, email address, confidence, live Tocayo URL, transfer link, MP4 path, primary message, follow-up, and any blocked/missing items.
 
 ## Quality Bar
 

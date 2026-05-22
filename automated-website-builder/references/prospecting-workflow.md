@@ -18,6 +18,7 @@ Infer reasonable defaults and continue unless the base location is missing.
 - Read `memory.md` before researching or selecting leads. Exclude remembered businesses unless the user explicitly asks to revisit them.
 - Use browser-assisted research and public sources.
 - Treat maps, directories, search results, social pages, and official websites as discovery/evidence sources.
+- Prefer capturing a direct Google Maps or Google Business Profile URL for viable leads. Tocayo can use it to prefill name, category, address, phone, website, and hours.
 - Do not bypass CAPTCHAs, login walls, paywalls, bot protections, robots restrictions, or rate limits.
 - Do not collect private personal data. Prefer public business contact channels.
 - Prefer fewer verified leads over many weak guesses.
@@ -27,7 +28,7 @@ Infer reasonable defaults and continue unless the base location is missing.
 
 1. Search for the requested category near the base location.
 2. Build a candidate list from visible public results, public directories, local pages, or official business profiles.
-3. For each candidate, capture business name, category, area, public phone/email/socials, website URL, and source URLs.
+3. For each candidate, capture business name, category, area, Google Maps URL when available, public phone/email/socials, website URL, and source URLs.
 4. Search the exact business name plus city/area to verify whether a standalone website exists.
 5. Classify website status:
    - `No site found`: no credible standalone website after exact-name search.
@@ -54,14 +55,14 @@ Mark remembered businesses as `Skip` with reason `duplicate in memory.md` unless
 
 Use this chat table for prospecting results unless the user requests a file:
 
-| Score | Business | Category | Area | Distance | Website status | Website/Social | Phone | Email | Why it is a prospect | Confidence |
+| Score | Business | Category | Area | Distance | Maps | Website/Social | Phone | Email | Why it is a prospect | Confidence |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
 Rules:
 
 - Keep `Why it is a prospect` short and actionable.
 - Use `Not found` instead of blank fields.
-- Include source URLs in notes or a compact `source_urls` field when useful.
+- Put a direct Maps/Profile URL in `Maps` when available. Include other source URLs in notes or a compact `source_urls` field when useful.
 - After the table, add `Best first outreach targets` with the top 3 leads and one practical reason each.
 - State search location, radius, categories, and date in the summary.
 - State how many candidates were excluded because they matched `memory.md`.
@@ -69,5 +70,5 @@ Rules:
 When creating CSV, use:
 
 ```csv
-score,business,category,area,distance_km,website_status,website_url,social_urls,phone,email,source_urls,why_prospect,confidence,notes
+score,business,category,area,distance_km,website_status,google_maps_url,website_url,social_urls,phone,email,source_urls,why_prospect,confidence,notes
 ```

@@ -9,6 +9,7 @@ An installable Codex skill for finding local-business leads and turning them int
 - Finds and qualifies local-business prospects from public sources.
 - Reads and updates `memory.md` before each run so it avoids duplicate leads and duplicate site generation.
 - Checks whether each prospect has no site, social-only presence, a weak site, or an existing good site.
+- Captures Google Maps profile URLs and uses Tocayo onboarding to prefill business details when available.
 - Scores leads as hot, warm, low, or skip and can also read existing CSV/TSV/JSON/Markdown lead sheets.
 - Interviews the user for sender identity, offer, tone, CTA, channel, and constraints before writing outreach.
 - Builds a Tocayo site for each selected lead using the available Tocayo interface in the user's environment.

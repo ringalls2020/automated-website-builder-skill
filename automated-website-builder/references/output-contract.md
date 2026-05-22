@@ -8,8 +8,8 @@ Always include the `memory.md` path used for the run.
 
 Include one row per attempted lead:
 
-| Business name | Phone | Email | Status | Live Tocayo URL | Transfer link | MP4 | Contact channel | Notes |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Business name | Maps | Phone | Email | Status | Live Tocayo URL | Transfer link | MP4 | Contact channel | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
 Statuses:
 
@@ -24,6 +24,7 @@ Statuses:
 For each ready lead, provide:
 
 - Business name.
+- Google Maps URL, or `Not found`.
 - Phone number, or `Not found`.
 - Email address, or `Not found`.
 - Evidence used for personalization.

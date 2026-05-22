@@ -23,6 +23,20 @@ FIELD_ALIASES = {
     },
     "category": {"category", "niche", "trade", "service", "services", "type"},
     "location": {"location", "city", "area", "address", "service area"},
+    "google_maps_url": {
+        "google maps",
+        "google maps url",
+        "google profile",
+        "google profile url",
+        "google business profile",
+        "google business profile url",
+        "gbp",
+        "map",
+        "map url",
+        "maps",
+        "maps url",
+        "place url",
+    },
     "website_url": {"website", "website url", "site", "url", "current website"},
     "website_status": {"website status", "site status", "status", "web status"},
     "social_urls": {"social", "socials", "social urls", "facebook", "instagram", "linkedin"},
@@ -48,8 +62,25 @@ def canonical_field(header: str) -> str | None:
 
 
 def split_links(value: str) -> list[str]:
-    parts = re.split(r"[\s,;]+", value.strip())
+    parts = re.split(r"[\s;]+|,(?=https?://)", value.strip())
     return [part for part in parts if part.startswith(("http://", "https://"))]
+
+
+def is_google_maps_url(value: str) -> bool:
+    normalized = value.lower()
+    return any(
+        marker in normalized
+        for marker in (
+            "google.com/maps",
+            "maps.google.com",
+            "maps.app.goo.gl",
+            "goo.gl/maps",
+        )
+    )
+
+
+def first_google_maps_url(values: list[str]) -> str:
+    return next((value for value in values if is_google_maps_url(value)), "")
 
 
 def load_json(path: Path) -> list[dict[str, Any]]:
@@ -113,6 +144,7 @@ def normalize_row(row: dict[str, Any], index: int) -> dict[str, Any]:
         "business_name": "",
         "category": "",
         "location": "",
+        "google_maps_url": "",
         "website_url": "",
         "website_status": "",
         "social_urls": [],
@@ -132,10 +164,22 @@ def normalize_row(row: dict[str, Any], index: int) -> dict[str, Any]:
             continue
         if field in {"social_urls", "source_urls"}:
             lead[field].extend(split_links(text) or [text])
+        elif field == "google_maps_url":
+            lead[field] = first_google_maps_url(split_links(text)) or text
         elif field:
             lead[field] = text
         else:
             lead["raw"][str(key)] = text
+
+    if lead["website_url"] and is_google_maps_url(str(lead["website_url"])):
+        lead["google_maps_url"] = lead["google_maps_url"] or str(lead["website_url"])
+        lead["website_url"] = ""
+
+    if not lead["google_maps_url"]:
+        lead["google_maps_url"] = first_google_maps_url(lead["source_urls"])
+
+    if lead["google_maps_url"] and lead["google_maps_url"] not in lead["source_urls"]:
+        lead["source_urls"].append(lead["google_maps_url"])
 
     if lead["website_url"] and not lead["website_url"].startswith(("http://", "https://")):
         if "." in lead["website_url"] and " " not in lead["website_url"]:
@@ -172,6 +216,8 @@ def rank_score(lead: dict[str, Any]) -> int:
 
     if lead.get("phone") or lead.get("email") or lead.get("social_urls"):
         score += 15
+    if lead.get("google_maps_url"):
+        score += 10
     if lead.get("business_name"):
         score += 10
     if lead.get("location"):
@@ -190,6 +236,8 @@ def selection_reason(lead: dict[str, Any]) -> str:
         reasons.append(f"website status: {lead['website_status']}")
     if lead.get("phone") or lead.get("email") or lead.get("social_urls"):
         reasons.append("has public contact route")
+    if lead.get("google_maps_url"):
+        reasons.append("has Google Maps profile for Tocayo prefill")
     if lead.get("confidence"):
         reasons.append(f"confidence: {lead['confidence']}")
     if lead.get("notes"):
@@ -206,8 +254,10 @@ def normalize_leads(rows: list[dict[str, Any]], max_leads: int | None) -> list[d
 
 
 def print_markdown(leads: list[dict[str, Any]]) -> None:
-    print("| Rank | Business | Category | Location | Website status | Phone | Email | Score | Reason |")
-    print("| --- | --- | --- | --- | --- | --- | --- | ---: | --- |")
+    print(
+        "| Rank | Business | Category | Location | Website status | Maps | Phone | Email | Score | Reason |"
+    )
+    print("| --- | --- | --- | --- | --- | --- | --- | --- | ---: | --- |")
     for rank, lead in enumerate(leads, start=1):
         values = [
             str(rank),
@@ -215,6 +265,7 @@ def print_markdown(leads: list[dict[str, Any]]) -> None:
             lead.get("category", ""),
             lead.get("location", ""),
             lead.get("website_status", ""),
+            lead.get("google_maps_url", "") or "Not found",
             lead.get("phone", "") or "Not found",
             lead.get("email", "") or "Not found",
             str(lead.get("rank_score", "")),
