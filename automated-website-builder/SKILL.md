@@ -78,7 +78,7 @@ If the base location is missing and cannot be inferred, ask one concise clarific
 
 8. Generate a 30-second walkthrough MP4 for each live site.
    - Use `scripts/render-demo-video.mjs` by default.
-   - If `$tocayo-demo-video` is installed, it is acceptable to use that skill instead.
+   - If the `tocayo-demo-video` skill is installed (`/tocayo-demo-video` in Claude Code, `$tocayo-demo-video` in Codex), it is acceptable to use that skill instead.
    - The video must be a silent single linear scroll of the website at 1920x1080. No narration, captions, cuts, mockups, browser chrome, cursor effects, or music.
 
 9. Draft outreach.

@@ -1,7 +1,7 @@
 {
   "name": "automated-website-builder-skill",
   "version": "0.1.0",
-  "description": "Codex skill for finding local leads and turning them into Tocayo demo sites, transfer links, walkthrough videos, and cold outreach messages.",
+  "description": "Codex and Claude Code skill for finding local leads and turning them into Tocayo demo sites, transfer links, walkthrough videos, and cold outreach messages.",
   "homepage": "https://github.com/ringalls2020/automated-website-builder-skill#readme",
   "license": "MIT",
   "type": "module",
@@ -23,6 +23,8 @@
   },
   "keywords": [
     "codex",
+    "claude",
+    "claude-code",
     "skill",
     "tocayo",
     "outreach",
